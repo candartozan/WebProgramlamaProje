@@ -55,6 +55,7 @@
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\DbInitializer.cs" />
     <Compile Include="Concrete\GenericDal.cs" />
     <Compile Include="Concrete\RoleDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

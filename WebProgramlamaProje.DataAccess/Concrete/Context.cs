@@ -12,7 +12,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 	{
 		public Context() : base()
 		{
-
+			Database.SetInitializer(new DbInitializer());
 		}
 
 		public DbSet<User> Users { get; set; }

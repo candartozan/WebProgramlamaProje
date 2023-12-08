@@ -13,11 +13,12 @@
 
     @{Html.RenderPartial("_Navbar");}
 
-    <main>
+    <main class="container">
         @RenderBody()
     </main>
 
-    <footer></footer>
+    @{Html.RenderPartial("_Footer");}
+
 
     <script language="javascript" src="~/Scripts/bootstrap.bundle.min.js"></script>
 </body>

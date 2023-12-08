@@ -24,11 +24,11 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 			}
 		}
 
-		public IQueryable<T> FindAll()
+		public IEnumerable<T> FindAll()
 		{
 			using (var context = new Context())
 			{
-				return context.Set<T>();
+				return context.Set<T>().ToList();
 			}
 		}
 

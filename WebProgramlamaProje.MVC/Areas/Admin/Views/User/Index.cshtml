@@ -1,0 +1,11 @@
+﻿@model List<WebProgramlamaProje.Entities.User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Users</h2>
+@foreach (var u in Model)
+{
+    <h3>@u.Name</h3>
+}

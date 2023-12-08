@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebProgramlamaProje.DataAccess\WebProgramlamaProje.DataAccess.csproj">
+      <Project>{12d4beb3-964e-477b-b1ec-b6d4df4bca21}</Project>
+      <Name>WebProgramlamaProje.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebProgramlamaProje.Entities\WebProgramlamaProje.Entities.csproj">
+      <Project>{f82c5f92-b2f9-4e32-a77e-7888d54f7e2f}</Project>
+      <Name>WebProgramlamaProje.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

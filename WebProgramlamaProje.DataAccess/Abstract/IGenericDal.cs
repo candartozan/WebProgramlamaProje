@@ -9,7 +9,7 @@ namespace WebProgramlamaProje.DataAccess.Abstract
 {
 	public interface IGenericDal<T> where T : class, new()
 	{
-		IQueryable<T> FindAll();
+		IEnumerable<T> FindAll();
 		T FindByCondition(Expression<Func<T, bool>> expression);
 		void Create(T entity);
 		void Remove(T entity);

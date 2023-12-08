@@ -51,9 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBrandDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\BrandDal.cs" />
+    <Compile Include="Concrete\CategoryDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\DbInitializer.cs" />
     <Compile Include="Concrete\GenericDal.cs" />

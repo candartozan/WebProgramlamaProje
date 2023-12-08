@@ -11,7 +11,13 @@ namespace WebProgramlamaProje.MVC.Areas.Admin.Controllers
 {
 	public class UserController : Controller
 	{
-		private readonly IUserService _userManager = new UserManager(new UserDal());
+		private readonly IUserService _userManager;
+
+		public UserController(IUserService userManager)
+		{
+			_userManager = userManager;
+		}
+
 		// GET: Admin/User
 		public ActionResult Index()
 		{

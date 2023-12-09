@@ -1,0 +1,57 @@
+﻿@model List<WebProgramlamaProje.Entities.Product>
+
+@{
+    ViewBag.Title = "Ürünler";
+}
+
+<div class="col-12 m-3 text-center">
+    <h3>Ürünler</h3>
+    <a class="btn btn-success" href="@Url.Action("Add","Product")">
+        <i class="fa-solid fa-plus"></i>
+        Ekle
+    </a>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Görsel</th>
+                <th>Ad</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+                <th>Kategori</th>
+                <th>Marka</th>
+                <th>Eklenme tarihi</th>
+                <th>Operasyonlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>
+                        <img class="border border-light rounded" src="@p.PhotoUrl" alt="@p.Name" />
+                    </td>
+                    <td>@p.Name</td>
+                    <td>@p.Price</td>
+                    <td>@p.Stock</td>
+                    <td>@p.Category.Name</td>
+                    <td>@p.Brand.Name</td>
+                    <td>@p.DateOfAddition</td>
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-danger" href="@Url.Action("Remove", "Product", new {id=p.Id})">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                            <a class="btn btn-warning" href="@Url.Action("Update", "Product", new {id=p.Id})">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

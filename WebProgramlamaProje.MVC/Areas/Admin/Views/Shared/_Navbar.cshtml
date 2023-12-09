@@ -10,7 +10,7 @@
                     @Html.ActionLink("Kullanıcılar", "Index", "User", new { area = "Admin" }, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ürünler</a>
+                    @Html.ActionLink("Ürünler", "Index", "Product", new { area = "Admin" }, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
                     @Html.ActionLink("Kategoriler", "Index", "Category", new { area = "Admin" }, new { @class = "nav-link" })

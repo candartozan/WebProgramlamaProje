@@ -21,6 +21,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 			using (var context = new Context())
 			{
 				context.Set<T>().Add(entity);
+				context.SaveChanges();
 			}
 		}
 
@@ -45,6 +46,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 			using (var context = new Context())
 			{
 				context.Set<T>().Remove(entity);
+				context.SaveChanges();
 			}
 		}
 
@@ -53,6 +55,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 			using (var context = new Context())
 			{
 				context.Set<T>().AddOrUpdate(entity);
+				context.SaveChanges();
 			}
 		}
 	}

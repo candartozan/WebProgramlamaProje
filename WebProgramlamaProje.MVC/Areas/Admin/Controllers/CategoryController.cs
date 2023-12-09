@@ -33,10 +33,17 @@ namespace WebProgramlamaProje.MVC.Areas.Admin.Controllers
 		[HttpPost]
 		public ActionResult Add(Category model)
 		{
-			var result = model;
-			//_categoryService.AddOneCategory(model);
-			TempData["CategoryMessage"] = $"{model.Name}, kategorilere eklendi.";
-			return RedirectToAction("Index");
+			if (ModelState.IsValid)
+			{
+				var result = _categoryService.AddOneCategory(model);
+				if (result != null)
+				{
+					TempData["CategoryMessage"] = $"{model.Name}, kategorilere eklendi.";
+					return RedirectToAction("Index");
+				}
+				ModelState.AddModelError("", "Kategori Eklenemedi");
+			}
+			return View();
 		}
 	}
 }

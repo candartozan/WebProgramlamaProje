@@ -9,6 +9,7 @@ namespace WebProgramlamaProje.Business.Abstract
 {
 	public interface ICategoryService
 	{
+		Category AddOneCategory(Category entity);
 		List<Category> GetAllCategories();
 	}
 }

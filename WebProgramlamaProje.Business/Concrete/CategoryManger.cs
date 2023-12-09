@@ -18,6 +18,12 @@ namespace WebProgramlamaProje.Business.Concrete
 			_categoryDal = categoryDal;
 		}
 
+		public Category AddOneCategory(Category entity)
+		{
+			_categoryDal.Create(entity);
+			return _categoryDal.FindByCondition(c => c.Name.Equals(entity.Name));
+		}
+
 		public List<Category> GetAllCategories()
 		{
 			return _categoryDal.FindAll().ToList();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.Mvc;
 using WebProgramlamaProje.Business.Abstract;
@@ -42,6 +43,32 @@ namespace WebProgramlamaProje.MVC.Areas.Admin.Controllers
 					return RedirectToAction("Index");
 				}
 				ModelState.AddModelError("", "Kategori Eklenemedi");
+			}
+			return View();
+		}
+
+		public ActionResult Remove(int id)
+		{
+			_categoryService.RemoveOneCategory(id);
+
+			return RedirectToAction("Index");
+		}
+
+		[HttpGet]
+		public ActionResult Update(int id)
+		{
+			var model = _categoryService.GetCategoryById(id);
+			return View(model);
+		}
+
+		[HttpPost]
+		public ActionResult Update(Category model)
+		{
+			if (ModelState.IsValid)
+			{
+				_categoryService.UpdateOneCategory(model);
+
+				return RedirectToAction("Index");
 			}
 			return View();
 		}

@@ -28,5 +28,21 @@ namespace WebProgramlamaProje.Business.Concrete
 		{
 			return _categoryDal.FindAll().ToList();
 		}
+
+		public Category GetCategoryById(int id)
+		{
+			return _categoryDal.FindByCondition(c => c.Id.Equals(id));
+		}
+
+		public void RemoveOneCategory(int id)
+		{
+			var entitiy = _categoryDal.FindByCondition(c => c.Id.Equals(id));
+			_categoryDal.Remove(entitiy);
+		}
+
+		public void UpdateOneCategory(Category entity)
+		{
+			_categoryDal.Update(entity);
+		}
 	}
 }

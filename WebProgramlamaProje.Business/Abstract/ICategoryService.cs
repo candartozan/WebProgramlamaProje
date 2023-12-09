@@ -11,5 +11,8 @@ namespace WebProgramlamaProje.Business.Abstract
 	{
 		Category AddOneCategory(Category entity);
 		List<Category> GetAllCategories();
+		Category GetCategoryById(int id);
+		void RemoveOneCategory(int id);
+		void UpdateOneCategory(Category entity);
 	}
 }

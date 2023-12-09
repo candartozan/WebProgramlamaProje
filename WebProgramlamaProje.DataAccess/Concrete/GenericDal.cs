@@ -37,7 +37,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 		{
 			using (var context = new Context())
 			{
-				return context.Set<T>().Where(expression).SingleOrDefault();
+				return context.Set<T>().Where(expression).FirstOrDefault();
 			}
 		}
 
@@ -45,6 +45,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 		{
 			using (var context = new Context())
 			{
+				context.Set<T>().Attach(entity);
 				context.Set<T>().Remove(entity);
 				context.SaveChanges();
 			}

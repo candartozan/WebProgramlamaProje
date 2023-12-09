@@ -34,6 +34,14 @@
                     <td>@c.Id</td>
                     <td>@c.Name</td>
                     <td>
+                        <div class="btn-group">
+                            <a class="btn btn-danger" href="@Url.Action("Remove", "Category", new {id=c.Id})">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                            <a class="btn btn-warning" href="@Url.Action("Update", "Category", new {id=c.Id})">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             }

@@ -31,10 +31,10 @@
                 <tr>
                     <td>@p.Id</td>
                     <td>
-                        <img class="border border-light rounded" src="@p.PhotoUrl" alt="@p.Name" />
+                        <img class="border border-light rounded" width="50px" src="@p.PhotoUrl" alt="@p.Name" />
                     </td>
                     <td>@p.Name</td>
-                    <td>@p.Price</td>
+                    <td>@p.Price.ToString("c")</td>
                     <td>@p.Stock</td>
                     <td>@p.Category.Name</td>
                     <td>@p.Brand.Name</td>

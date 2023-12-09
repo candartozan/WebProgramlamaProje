@@ -1,0 +1,66 @@
+﻿@model WebProgramlamaProje.MVC.Areas.Admin.Models.ProductInsertionViewModel
+
+@{
+    ViewBag.Title = "Ürünler";
+}
+
+<div class="text-center my-3">
+    <div class="display-6">Ürün Güncelle</div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+
+    <div class="col-md-6">
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+
+        @using (Html.BeginForm("Update", "Product", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => m.Product.Id, new { value = Model.Product.Id })
+            @Html.HiddenFor(m => m.Product.DateOfAddition, new { value = Model.Product.DateOfAddition })
+
+            <div class="form-group my-3">
+                @Html.Label("Ürün Adı")
+                @Html.TextBoxFor(p => p.Product.Name, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Ürün Fiyatı")
+                @Html.TextBoxFor(p => p.Product.Price, new { @class = "form-control", type = "number" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Ürün Görsel URL")
+                @Html.TextBoxFor(p => p.Product.PhotoUrl, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Ürün Stok")
+                @Html.TextBoxFor(p => p.Product.Stock, new { @class = "form-control", type = "number" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Kategori Seçin")
+                @Html.DropDownListFor(p => p.Product.CategoryId, Model.CategorySelectList, new { @class = "form-select" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Marka Seçin")
+                @Html.DropDownListFor(m => m.Product.BrandId, Model.BrandSelectList, new { @class = "form-select" })
+            </div>
+
+            <div class="form-group my-3">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Güncelle
+                    </button>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Index","Product")">
+                        <i class="fa fa-list"></i> Ürünler
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+﻿@model List<WebProgramlamaProje.Entities.Brand>
+
+<div class="my-3">
+    <label>Markalar</label>
+    <ul class="list-group">
+        @foreach (var c in Model)
+        {
+            <li class="list-group-item">@c.Name</li>
+        }
+    </ul>
+
+</div>

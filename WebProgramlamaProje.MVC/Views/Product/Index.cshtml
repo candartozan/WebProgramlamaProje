@@ -1,0 +1,22 @@
+﻿@model WebProgramlamaProje.MVC.Models.ProductMenuViewModel
+
+@{
+    ViewBag.Title = "Ürünler";
+}
+
+<div class="display-5 my-3 text-center">Ürünler</div>
+<div class="row my-3">
+    <div class="col-md-3">
+        @{Html.RenderPartial("_ProductCategoryMenuPartial", Model.Categories);}
+        @{Html.RenderPartial("_ProductBrandMenuPartial", Model.Brands);}
+    </div>
+
+    <div class="col-md-9">
+        <div class="row">
+            @foreach (var p in Model.Products)
+            {
+                { Html.RenderPartial("_ProductCardPartial", p); }
+            }
+        </div>
+    </div>
+</div>

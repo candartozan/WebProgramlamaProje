@@ -23,8 +23,10 @@ namespace WebProgramlamaProje.MVC
 			builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
 			builder.RegisterType<UserDal>().As<IUserDal>().SingleInstance();
+			builder.RegisterType<CategoryDal>().As<ICategoryDal>().SingleInstance();
 
 			builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+			builder.RegisterType<CategoryManger>().As<ICategoryService>().SingleInstance();
 
 			IContainer container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

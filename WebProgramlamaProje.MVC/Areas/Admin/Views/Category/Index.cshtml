@@ -1,0 +1,44 @@
+﻿@model List<WebProgramlamaProje.Entities.Category>
+
+@{
+    ViewBag.Title = "Kategoriler";
+}
+
+<div class="col-12 m-3 text-center">
+    <h3>Kategoriler</h3>
+    <a class="btn btn-success" href="@Url.Action("Add","Category")">
+        <i class="fa-solid fa-plus"></i>
+        Ekle
+    </a>
+
+    @if (TempData["CategoryMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible my-3">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>@TempData["CategoryMessage"]</strong>
+        </div>
+    }
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ad</th>
+                <th>Operasyonlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Name</td>
+                    <td>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

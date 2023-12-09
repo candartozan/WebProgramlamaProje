@@ -1,0 +1,37 @@
+﻿@model WebProgramlamaProje.Entities.Brand
+@{
+    ViewBag.Title = "Markalar";
+}
+
+<div class="text-center my-3">
+    <div class="display-6">Marka Güncelle</div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+
+    <div class="col-md-6">
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+
+        @using (Html.BeginForm("Update", "Brand", FormMethod.Post))
+        {
+            <div class="form-group my-3">
+                @Html.Label("Marka Adı")
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Güncelle
+                    </button>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Index","Brand")">
+                        <i class="fa fa-list"></i> Markalar
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

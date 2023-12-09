@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IBrandDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
+    <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\BrandDal.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\DbInitializer.cs" />
     <Compile Include="Concrete\GenericDal.cs" />
+    <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\RoleDal.cs" />
     <Compile Include="Migrations\202312082017336_InitialCreate.cs" />
     <Compile Include="Migrations\202312082017336_InitialCreate.designer.cs">
@@ -73,6 +75,10 @@
     <Compile Include="Migrations\202312091030070_category-update.cs" />
     <Compile Include="Migrations\202312091030070_category-update.designer.cs">
       <DependentUpon>202312091030070_category-update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312091310453_Product_added.cs" />
+    <Compile Include="Migrations\202312091310453_Product_added.designer.cs">
+      <DependentUpon>202312091310453_Product_added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312091030070_category-update.resx">
       <DependentUpon>202312091030070_category-update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312091310453_Product_added.resx">
+      <DependentUpon>202312091310453_Product_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

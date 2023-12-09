@@ -10,5 +10,9 @@ namespace WebProgramlamaProje.Business.Abstract
 	public interface IBrandService
 	{
 		List<Brand> GetAllBrands();
+		void AddOneBrand(Brand entity);
+		Brand GetBrandById(int id);
+		void RemoveOneBrand(int id);
+		void UpdateOneBrand(Brand entity);
 	}
 }

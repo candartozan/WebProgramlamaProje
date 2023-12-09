@@ -9,9 +9,10 @@ namespace WebProgramlamaProje.Entities
 {
 	public class Category
 	{
-        public int Id { get; set; }
+		public int Id { get; set; }
 
-        [Required(ErrorMessage ="Kategori adı boş olamaz.")]
-        public String Name { get; set; }
-    }
+		[Required(ErrorMessage = "Kategori adı boş olamaz.")]
+		public String Name { get; set; }
+		public virtual ICollection<Product> Products { get; set; }
+	}
 }

@@ -9,7 +9,9 @@ namespace WebProgramlamaProje.Entities
 {
 	public class Brand
 	{
-        public int Id { get; set; }
-        public String Name { get; set; }
-    }
+		public int Id { get; set; }
+		[Required(ErrorMessage = "Marka Adı boş olamaz.")]
+		public String Name { get; set; }
+		public virtual ICollection<Product> Products { get; set; }
+	}
 }

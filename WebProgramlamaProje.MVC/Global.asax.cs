@@ -26,6 +26,7 @@ namespace WebProgramlamaProje.MVC
 			builder.RegisterType<CategoryDal>().As<ICategoryDal>().SingleInstance();
 			builder.RegisterType<BrandDal>().As<IBrandDal>().SingleInstance();
 			builder.RegisterType<ProductDal>().As<IProductDal>().SingleInstance();
+			builder.RegisterType<RoleDal>().As<IRoleDal>().SingleInstance();
 
 			builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
 			builder.RegisterType<CategoryManger>().As<ICategoryService>().SingleInstance();

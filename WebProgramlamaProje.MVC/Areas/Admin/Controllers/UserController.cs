@@ -21,7 +21,7 @@ namespace WebProgramlamaProje.MVC.Areas.Admin.Controllers
 		// GET: Admin/User
 		public ActionResult Index()
 		{
-			var users = _userManager.GetAllUsers();
+			var users = _userManager.GetAllUsersWithDetails();
 			return View(users);
 		}
 	}

@@ -1,11 +1,51 @@
 ﻿@model List<WebProgramlamaProje.Entities.User>
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Kullanıcılar";
 }
 
-<h2>Users</h2>
-@foreach (var u in Model)
-{
-    <h3>@u.Name</h3>
-}
+<div class="col-12 m-3 text-center">
+    <h3>Kullanıcılar</h3>
+    <a class="btn btn-success" href="@Url.Action("Add","User")">
+        <i class="fa-solid fa-plus"></i>
+        Ekle
+    </a>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Eposta</th>
+                <th>Telefon</th>
+                <th>Kayıt Tarihi</th>
+                <th>Operasyonlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.Name</td>
+                    <td>@u.Surname</td>
+                    <td>@u.Email</td>
+                    <td>@u.PhoneNumber</td>
+                    <td>@u.DateOfRegistration</td>
+
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-danger" href="@Url.Action("Remove", "User", new {id=u.Id})">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                            <a class="btn btn-warning" href="@Url.Action("Update", "User", new {id=u.Id})">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -12,15 +12,47 @@ namespace WebProgramlamaProje.Business.Concrete
 	public class UserManager : IUserService
 	{
 		private readonly IUserDal _userDal;
+		private readonly IRoleDal _roleDal;
 
-		public UserManager(IUserDal userDal)
+		public UserManager(IUserDal userDal, IRoleDal roleDal)
 		{
 			_userDal = userDal;
+			_roleDal = roleDal;
 		}
 
-		public List<User> GetAllUsers()
+		public void AddUser(User user)
 		{
-			return _userDal.FindAll().ToList();
+			_userDal.Create(user);
+		}
+
+		public List<User> GetAllUsersWithDetails()
+		{
+			var user = _userDal.FindAll();
+
+			foreach (var u in user)
+			{
+				u.Role = _roleDal.FindByCondition(r => r.Id == u.RoleId);
+			}
+
+			return user.ToList();
+		}
+
+		public User GetUserWithDetailsById(int id)
+		{
+			var user = _userDal.FindByCondition(u => u.Id == id);
+			user.Role = _roleDal.FindByCondition(r => r.Id == user.RoleId);
+			return user;
+		}
+
+		public void RemoveUser(int id)
+		{
+			var user = _userDal.FindByCondition(u => u.Id == id);
+			_userDal.Remove(user);
+		}
+
+		public void UpdateUser(User user)
+		{
+			_userDal.Update(user);
 		}
 	}
 }

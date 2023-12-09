@@ -9,6 +9,10 @@ namespace WebProgramlamaProje.Business.Abstract
 {
 	public interface IUserService
 	{
-		List<User> GetAllUsers();
+		List<User> GetAllUsersWithDetails();
+		User GetUserWithDetailsById(int id);
+		void AddUser(User user);
+		void RemoveUser(int id);
+		void UpdateUser(User user);
 	}
 }

@@ -14,5 +14,6 @@ namespace WebProgramlamaProje.Business.Abstract
 		void AddUser(User user);
 		void RemoveUser(int id);
 		void UpdateUser(User user);
+		bool IsUserMailExist(String mail);
 	}
 }

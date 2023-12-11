@@ -17,8 +17,8 @@
 
         @using (Html.BeginForm("Update", "Product", FormMethod.Post))
         {
-            @Html.HiddenFor(m => m.Product.Id, new { value = Model.Product.Id })
-            @Html.HiddenFor(m => m.Product.DateOfAddition, new { value = Model.Product.DateOfAddition })
+            @Html.HiddenFor(m => m.Product.Id, new { value = Model.Product.Id });
+            @Html.HiddenFor(m => m.Product.DateOfAddition, new { value = Model.Product.DateOfAddition });
 
             <div class="form-group my-3">
                 @Html.Label("Ürün Adı")

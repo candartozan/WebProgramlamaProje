@@ -44,6 +44,12 @@ namespace WebProgramlamaProje.Business.Concrete
 			return user;
 		}
 
+		public bool IsUserMailExist(string mail)
+		{
+			var user = _userDal.FindByCondition(u => u.Email.Equals(mail));
+			return user != null ? true : false;
+		}
+
 		public void RemoveUser(int id)
 		{
 			var user = _userDal.FindByCondition(u => u.Id == id);

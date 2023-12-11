@@ -32,6 +32,7 @@ namespace WebProgramlamaProje.MVC
 			builder.RegisterType<CategoryManger>().As<ICategoryService>().SingleInstance();
 			builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
 			builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
+			builder.RegisterType<RoleManager>().As<IRoleService>().SingleInstance();
 
 			IContainer container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

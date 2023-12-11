@@ -14,9 +14,11 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Rol</th>
                 <th>Ad</th>
                 <th>Soyad</th>
                 <th>Eposta</th>
+                <th>Şifre</th>
                 <th>Telefon</th>
                 <th>Kayıt Tarihi</th>
                 <th>Operasyonlar</th>
@@ -27,9 +29,11 @@
             {
                 <tr>
                     <td>@u.Id</td>
+                    <td>@u.Role.Name</td>
                     <td>@u.Name</td>
                     <td>@u.Surname</td>
                     <td>@u.Email</td>
+                    <td>@u.Password</td>
                     <td>@u.PhoneNumber</td>
                     <td>@u.DateOfRegistration</td>
 

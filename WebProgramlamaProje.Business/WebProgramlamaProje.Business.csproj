@@ -44,10 +44,12 @@
     <Compile Include="Abstract\IBrandService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IRoleService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\BrandManager.cs" />
     <Compile Include="Concrete\CategoryManger.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
+    <Compile Include="Concrete\RoleManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

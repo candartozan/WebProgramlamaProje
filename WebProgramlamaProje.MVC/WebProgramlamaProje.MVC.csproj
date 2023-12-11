@@ -158,12 +158,14 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\ProductInsertionViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UserInsertionViewModel.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductMenuViewModel.cs" />
+    <Compile Include="Models\UserLoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +220,7 @@
     <Content Include="Views\Shared\_ProductCategoryMenuPartial.cshtml" />
     <Content Include="Views\Shared\_ProductBrandMenuPartial.cshtml" />
     <Content Include="Views\Shared\_ProductCardPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

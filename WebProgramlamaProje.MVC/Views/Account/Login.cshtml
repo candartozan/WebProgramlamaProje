@@ -1,0 +1,29 @@
+﻿@model WebProgramlamaProje.MVC.Models.UserLoginViewModel
+
+@{
+    ViewBag.Title = "Giriş";
+}
+
+<div class="m-5 d-flex justify-content-center align-items-center">
+
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "col-md-6" }))
+    {
+        <div class="text-center my-3">
+            <i class="fa-solid fa-right-to-bracket fa-4x"></i>
+            <div class="display-4">Giriş Yapın</div>
+        </div>
+
+        <div class="form-floating my-3">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", id = "floatingInput", placeholder = "E-posta" })
+            @Html.LabelFor(m => m.Email, "E-posta", new { @for = "floatingInput" })
+        </div>
+
+        <div class="form-floating my-3">
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", type = "password", id = "floatingPassword", placeholder = "Şifre" })
+            @Html.LabelFor(m => m.Password, "Şifre", new { @for = "floatingPassword" })
+        </div>
+
+        <button class="btn btn-primary w-100 py-2 my-2" type="submit">Sign in</button>
+
+    }
+</div>

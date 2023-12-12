@@ -8,9 +8,12 @@ using WebProgramlamaProje.Business.Abstract;
 using WebProgramlamaProje.Business.Concrete;
 using WebProgramlamaProje.DataAccess.Concrete;
 using WebProgramlamaProje.MVC.Areas.Admin.Models;
+using WebProgramlamaProje.MVC.Infrastructure;
 
 namespace WebProgramlamaProje.MVC.Areas.Admin.Controllers
 {
+	[CustomAuthenticationFilter]
+	[CustomAuthorize("Admin")]
 	public class UserController : Controller
 	{
 		private readonly IUserService _userManager;

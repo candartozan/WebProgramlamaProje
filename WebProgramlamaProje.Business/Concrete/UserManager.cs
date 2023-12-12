@@ -37,6 +37,12 @@ namespace WebProgramlamaProje.Business.Concrete
 			return user.ToList();
 		}
 
+		public User GetUserByEmailPassword(string email, string password)
+		{
+			var user = _userDal.FindByCondition(u => u.Email == email && u.Password == password);
+			return user;
+		}
+
 		public User GetUserWithDetailsById(int id)
 		{
 			var user = _userDal.FindByCondition(u => u.Id == id);

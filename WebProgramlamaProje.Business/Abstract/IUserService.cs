@@ -15,5 +15,6 @@ namespace WebProgramlamaProje.Business.Abstract
 		void RemoveUser(int id);
 		void UpdateUser(User user);
 		bool IsUserMailExist(String mail);
+		User GetUserByEmailPassword(string email, string password);
 	}
 }

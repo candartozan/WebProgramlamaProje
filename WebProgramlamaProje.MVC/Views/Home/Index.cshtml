@@ -1,2 +1,4 @@
-﻿<h3 class="text-center">Mağazamıza hoşgeldin...</h3>
-
+﻿@if (!string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+{
+    <h3 class="text-center">Mağazamıza hoşgeldin @Session["UserName"]</h3>
+}

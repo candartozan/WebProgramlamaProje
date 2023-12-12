@@ -14,25 +14,49 @@
                 </li>
             </ul>
 
-            @Html.ActionLink("Admin", "Index", "Dashboard", new { area = "Admin" }, new { @class = "btn btn-dark m-1" })
+            @if (!string.IsNullOrEmpty(Convert.ToString(Session["UserRoleId"])))
+            {
+                if (Session["UserRoleId"].ToString() == "1")
+                {
+                    @Html.ActionLink("Admin", "Index", "Dashboard", new { area = "Admin" }, new { @class = "btn btn-dark m-1" })
+                }
+            }
+
+
 
             <form class="w-50 me-3" role="search">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
 
-            <div class="dropdown text-end m-1">
-                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+            @if (!string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                <div class="dropdown text-end m-1">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                        Hesap
+                    </a>
+                    <ul class="dropdown-menu text-small" style="">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Adresler</a></li>
+                        <li><a class="dropdown-item" href="#">Siparişler</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="@Url.Action("Logout","Account")">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Çıkış Yap
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <a class="d-block link-body-emphasis text-decoration-none btn btn-secondary m-1" href="@Url.Action("Login","Account")">
                     <i class="fa-solid fa-user"></i>
-                    Hesap
+                    Giriş Yap
                 </a>
-                <ul class="dropdown-menu text-small" style="">
-                    <li><a class="dropdown-item" href="#">Profil</a></li>
-                    <li><a class="dropdown-item" href="#">Adresler</a></li>
-                    <li><a class="dropdown-item" href="#">Siparişler</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
-                </ul>
-            </div>
+            }
+
 
             <div class="dropdown text-end m-1">
                 <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle btn btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">

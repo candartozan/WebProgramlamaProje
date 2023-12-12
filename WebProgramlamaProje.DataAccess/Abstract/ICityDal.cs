@@ -7,7 +7,7 @@ using WebProgramlamaProje.Entities;
 
 namespace WebProgramlamaProje.DataAccess.Abstract
 {
-	internal interface ICityDal : IGenericDal<City>
+	public interface ICityDal : IGenericDal<City>
 	{
 	}
 }

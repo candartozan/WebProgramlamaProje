@@ -26,5 +26,6 @@ namespace WebProgramlamaProje.Entities
 		public String PhoneNumber { get; set; }
 		public DateTime DateOfRegistration { get; set; }
 		public virtual Role Role { get; set; }
+		public virtual ICollection<Address> Addresses { get; set; }
 	}
 }

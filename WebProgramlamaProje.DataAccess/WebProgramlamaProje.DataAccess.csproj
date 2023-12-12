@@ -51,18 +51,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAddressDal.cs" />
     <Compile Include="Abstract\IBrandDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\IDistrictDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\IRegionDal.cs" />
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\AddressDal.cs" />
     <Compile Include="Concrete\BrandDal.cs" />
     <Compile Include="Concrete\CategoryDal.cs" />
+    <Compile Include="Concrete\CityDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\DbInitializer.cs" />
+    <Compile Include="Concrete\DistrictDal.cs" />
     <Compile Include="Concrete\GenericDal.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
+    <Compile Include="Concrete\RegionDal.cs" />
     <Compile Include="Concrete\RoleDal.cs" />
     <Compile Include="Migrations\202312082017336_InitialCreate.cs" />
     <Compile Include="Migrations\202312082017336_InitialCreate.designer.cs">

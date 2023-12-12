@@ -17,8 +17,11 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 
 		public DbSet<User> Users { get; set; }
 		public DbSet<Role> Roles { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Brand> Brands { get; set; }
-        public DbSet<Product> Products { get; set; }
-    }
+		public DbSet<Category> Categories { get; set; }
+		public DbSet<Brand> Brands { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<District> Districts { get; set; }
+		public DbSet<City> Cities { get; set; }
+		public DbSet<Region> Regions { get; set; }
+	}
 }

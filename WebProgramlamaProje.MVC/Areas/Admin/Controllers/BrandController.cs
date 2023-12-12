@@ -5,9 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using WebProgramlamaProje.Business.Abstract;
 using WebProgramlamaProje.Entities;
+using WebProgramlamaProje.MVC.Infrastructure;
 
 namespace WebProgramlamaProje.MVC.Areas.Admin.Controllers
 {
+	[CustomAuthenticationFilter]
+	[CustomAuthorize("Admin")]
 	public class BrandController : Controller
 	{
 		private readonly IBrandService _brandService;

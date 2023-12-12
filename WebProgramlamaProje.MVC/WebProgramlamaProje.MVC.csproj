@@ -168,6 +168,7 @@
     <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\ProductMenuViewModel.cs" />
     <Compile Include="Models\UserLoginViewModel.cs" />
+    <Compile Include="Models\UserRegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +224,8 @@
     <Content Include="Views\Shared\_ProductBrandMenuPartial.cshtml" />
     <Content Include="Views\Shared\_ProductCardPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

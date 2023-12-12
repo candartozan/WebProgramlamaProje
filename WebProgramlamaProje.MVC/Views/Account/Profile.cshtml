@@ -1,0 +1,70 @@
+﻿@model WebProgramlamaProje.Entities.User
+@{
+    ViewBag.Title = "Profil";
+}
+
+<div class="text-center my-3">
+    <div class="display-6">Kullanıcı Bilgileri</div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+
+    <div class="col-md-6">
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+        @if (!String.IsNullOrEmpty(Convert.ToString(TempData["UserInfo"])))
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                @TempData["UserInfo"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        @using (Html.BeginForm("Profile", "Account", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => m.Id, new { value = Model.Id });
+            @Html.HiddenFor(m => m.DateOfRegistration, new { value = Model.DateOfRegistration });
+            @Html.HiddenFor(m => m.RoleId, new { value = Model.RoleId });
+            @Html.HiddenFor(m => m.Email, new { value = Model.Email });
+
+            <div class="form-group my-3">
+                @Html.Label("Kullanıcı Adı")
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Kullanıcı Soyadı")
+                @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                @*@Html.Label("E-posta")
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", disabled = "" })*@
+                <p>E-posta değişikliği için sistem yöneticisi ile iletişime geçin.</p>
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Şifre")
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Telefon")
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", })
+            </div>
+
+            <div class="form-group my-3">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Bilgileri Güncelle
+                    </button>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Index","Home")">
+                        <i class="fa fa-list"></i> Ana Sayfa
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

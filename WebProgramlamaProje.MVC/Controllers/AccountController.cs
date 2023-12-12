@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebProgramlamaProje.Business.Abstract;
 using WebProgramlamaProje.Entities;
+using WebProgramlamaProje.MVC.Infrastructure;
 using WebProgramlamaProje.MVC.Models;
 
 namespace WebProgramlamaProje.MVC.Controllers
@@ -55,6 +56,54 @@ namespace WebProgramlamaProje.MVC.Controllers
 			Session["UserId"] = string.Empty;
 			Session["UserRoleId"] = string.Empty;
 			return RedirectToAction("Index", "Home");
+		}
+
+		[HttpGet]
+		public ActionResult Register()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public ActionResult Register(UserRegisterViewModel model)
+		{
+			if (ModelState.IsValid)
+			{
+				if (_userService.IsUserMailExist(model.Email))
+				{
+					ModelState.AddModelError("", "Bu mail adresi başka bir kullanıcı tarafından kullanılıyor.");
+					return View(model);
+				}
+				var user = new User();
+				user.Email = model.Email;
+				user.Password = model.Password;
+				user.Name = model.Name;
+				user.Surname = model.Surname;
+				user.DateOfRegistration = DateTime.Now;
+				user.RoleId = 2;
+				_userService.AddUser(user);
+
+				return RedirectToAction("Login", "Account");
+			}
+			return View(model);
+		}
+
+		[HttpGet]
+		[CustomAuthenticationFilter]
+		public ActionResult Profile()
+		{
+			var user = _userService.GetUserWithDetailsById(Convert.ToInt32(Session["UserId"]));
+			return View(user);
+		}
+
+		public ActionResult Profile(User model)
+		{
+			if (ModelState.IsValid)
+			{
+				_userService.UpdateUser(model);
+				TempData["UserInfo"] = "Bilgiler Güncellendi";
+			}
+			return View(model);
 		}
 	}
 }

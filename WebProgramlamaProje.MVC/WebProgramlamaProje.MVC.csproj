@@ -232,6 +232,7 @@
     <Content Include="Views\Address\Index.cshtml" />
     <Content Include="Views\Address\Add.cshtml" />
     <Content Include="Views\Address\Update.cshtml" />
+    <Content Include="Views\Shared\_CartPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

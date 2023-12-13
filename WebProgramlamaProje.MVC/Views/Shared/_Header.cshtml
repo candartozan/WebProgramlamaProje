@@ -36,12 +36,12 @@
                         Hesap
                     </a>
                     <ul class="dropdown-menu text-small" style="">
-                        <li><a class="dropdown-item" href="@Url.Action("Profile","Account")">Profil</a></li>
-                        <li><a class="dropdown-item" href="@Url.Action("Index","Address")">Adresler</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Profile", "Account")">Profil</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Index", "Address")">Adresler</a></li>
                         <li><a class="dropdown-item" href="#">Siparişler</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a class="dropdown-item" href="@Url.Action("Logout","Account")">
+                            <a class="dropdown-item" href="@Url.Action("Logout", "Account")">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 Çıkış Yap
                             </a>
@@ -51,27 +51,14 @@
             }
             else
             {
-                <a class="d-block link-body-emphasis text-decoration-none btn btn-secondary m-1" href="@Url.Action("Login","Account")">
+                <a class="d-block link-body-emphasis text-decoration-none btn btn-secondary m-1" href="@Url.Action("Login", "Account")">
                     <i class="fa-solid fa-user"></i>
                     Giriş Yap
                 </a>
             }
 
+            @{Html.RenderPartial("_CartPartial", WebProgramlamaProje.MVC.Models.SessionCart.GetCart());}
 
-            <div class="dropdown text-end m-1">
-                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle btn btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    Sepet
-                </a>
-                <ul class="dropdown-menu text-small" style="">
-                    <li><a class="dropdown-item" href="#">Sepete Git</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Ürün 1</a></li>
-                    <li><a class="dropdown-item" href="#">Ürün 2</a></li>
-                    <li><a class="dropdown-item" href="#">Ürün 3</a></li>
-
-                </ul>
-            </div>
         </div>
     </div>
 </header>

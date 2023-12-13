@@ -1,0 +1,32 @@
+﻿@model WebProgramlamaProje.Entities.Cart
+
+<div class="dropdown text-end m-1">
+    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle btn btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Sepet @if (Model.CartTotal == 0) { }
+        else
+        {
+            Model.CartTotal.ToString("c");
+        }
+
+    </a>
+    <ul class="dropdown-menu text-small" style="">
+        <li><a class="dropdown-item" href="#">Sepete Git</a></li>
+        <li><hr class="dropdown-divider"></li>
+        @if (Model.CartItems.Count == 0)
+        {
+
+
+            <li class="dropdown-item">Sepette Ürün Yok</li>
+
+        }
+        else
+        {
+            foreach (var item in Model.CartItems)
+            {
+                <li><a class="dropdown-item" href="#">@item.Product.Name</a></li>
+            }
+        }
+
+    </ul>
+</div>

@@ -23,5 +23,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 		public DbSet<District> Districts { get; set; }
 		public DbSet<City> Cities { get; set; }
 		public DbSet<Region> Regions { get; set; }
+		public DbSet<Cart> Carts { get; set; }
+		public DbSet<CartItem> CartItems { get; set; }
 	}
 }

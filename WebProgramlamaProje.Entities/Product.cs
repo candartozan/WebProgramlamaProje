@@ -22,5 +22,6 @@ namespace WebProgramlamaProje.Entities
 		public DateTime DateOfAddition { get; set; }
 		public virtual Category Category { get; set; }
 		public virtual Brand Brand { get; set; }
-	}
+        public virtual ICollection<CartItem> CartItems { get; set; }
+    }
 }

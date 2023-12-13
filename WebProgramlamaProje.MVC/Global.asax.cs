@@ -27,12 +27,17 @@ namespace WebProgramlamaProje.MVC
 			builder.RegisterType<BrandDal>().As<IBrandDal>().SingleInstance();
 			builder.RegisterType<ProductDal>().As<IProductDal>().SingleInstance();
 			builder.RegisterType<RoleDal>().As<IRoleDal>().SingleInstance();
+			builder.RegisterType<AddressDal>().As<IAddressDal>().SingleInstance();
+			builder.RegisterType<DistrictDal>().As<IDistrictDal>().SingleInstance();
+			builder.RegisterType<CityDal>().As<ICityDal>().SingleInstance();
+			builder.RegisterType<RegionDal>().As<IRegionDal>().SingleInstance();
 
 			builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
 			builder.RegisterType<CategoryManger>().As<ICategoryService>().SingleInstance();
 			builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
 			builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
 			builder.RegisterType<RoleManager>().As<IRoleService>().SingleInstance();
+			builder.RegisterType<AddressManager>().As<IAddressService>().SingleInstance();
 
 			IContainer container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

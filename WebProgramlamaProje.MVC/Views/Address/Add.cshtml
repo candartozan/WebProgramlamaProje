@@ -1,0 +1,51 @@
+﻿@model WebProgramlamaProje.Entities.Address
+
+@{
+    ViewBag.Title = "Adres Ekle";
+}
+
+<div class="text-center my-3">
+    <div class="display-6">Adres Bilgilerini Girin</div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+
+    <div class="col-md-6">
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+
+        @using (Html.BeginForm("Add", "Address", FormMethod.Post))
+        {
+
+            <div class="form-group my-3">
+                @Html.Label("Adres Başlığı")
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                @Html.Label("Adres Açıklaması")
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group my-3">
+                <div>
+                    @Html.Label("İlçe Seçin")
+                    @Html.DropDownListFor(m => m.DistrictId, (List<SelectListItem>)TempData["District"], new { @class = "form-select" })
+                </div>
+            </div>
+
+            <div class="form-group my-3">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Ekle
+                    </button>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Index","Address")">
+                        <i class="fa fa-list"></i> Adresler
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

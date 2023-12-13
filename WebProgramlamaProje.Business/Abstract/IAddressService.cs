@@ -14,6 +14,7 @@ namespace WebProgramlamaProje.Business.Abstract
 		List<District> GetDistricts();
 		List<Address> GetAddresses();
 		List<Address> GetAddressesByUserId(int id);
+		Address GetAddressesById(int id);
 		void AddAddress(Address address);
 		void RemoveAddress(int id);
 		void UpdateAddress(Address address);

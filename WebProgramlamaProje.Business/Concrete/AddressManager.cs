@@ -16,6 +16,14 @@ namespace WebProgramlamaProje.Business.Concrete
 		private readonly ICityDal _cityDal;
 		private readonly IRegionDal _regionDal;
 
+		public AddressManager(IAddressDal addressDal, IDistrictDal districtDal, ICityDal cityDal, IRegionDal regionDal)
+		{
+			_addressDal = addressDal;
+			_districtDal = districtDal;
+			_cityDal = cityDal;
+			_regionDal = regionDal;
+		}
+
 		public void AddAddress(Address address)
 		{
 			_addressDal.Create(address);
@@ -24,6 +32,12 @@ namespace WebProgramlamaProje.Business.Concrete
 		public List<Address> GetAddresses()
 		{
 			return _addressDal.FindAll().ToList();
+		}
+
+		public Address GetAddressesById(int id)
+		{
+			var adress = _addressDal.FindByCondition(a => a.Id == id);
+			return adress;
 		}
 
 		public List<Address> GetAddressesByUserId(int id)

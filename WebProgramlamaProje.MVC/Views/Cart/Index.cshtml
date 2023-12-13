@@ -1,0 +1,49 @@
+﻿@model WebProgramlamaProje.Entities.Cart
+
+<div>
+    <div class="display-6 text-center">
+        Sepet
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ürün</th>
+                <th>Adet</th>
+                <th>Fiyat</th>
+                <th>Sepetteki Tutar</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Product.Price.ToString("c")</td>
+                    <td>@((item.Product.Price * item.Quantity).ToString("c2"))</td>
+                    <td>
+                        <a href="@Url.Action("RemoveFromCart", new {id=item.ProductId})" class="btn btn-sm btn-danger">
+                            <i class="fa fa-remove"></i> Sepetten Kaldır
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-right">Toplam :</td>
+                <td class="text-right">
+                    <strong>@(Model.CartTotal.ToString("c2"))</strong>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-center my-3">
+        <div class="btn-group">
+            <a class="btn btn-primary" href="@Url.Action("Index","Product")">Ürünler</a>
+            <a class="btn btn-primary mx-2">Sipariş Ver</a>
+        </div>
+    </div>
+</div>

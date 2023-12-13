@@ -3,22 +3,21 @@
 <div class="dropdown text-end m-1">
     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle btn btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-cart-shopping"></i>
-        Sepet @if (Model.CartTotal == 0) { }
+        Sepet @if (Model.CartTotal == 0)
+        {
+        }
         else
         {
-            Model.CartTotal.ToString("c");
+    <span>(@Model.CartTotal.ToString("c"))</span>
         }
 
     </a>
     <ul class="dropdown-menu text-small" style="">
-        <li><a class="dropdown-item" href="#">Sepete Git</a></li>
+        <li><a class="dropdown-item" href="@Url.Action("Index","Cart")">Sepete Git</a></li>
         <li><hr class="dropdown-divider"></li>
         @if (Model.CartItems.Count == 0)
         {
-
-
             <li class="dropdown-item">Sepette Ürün Yok</li>
-
         }
         else
         {

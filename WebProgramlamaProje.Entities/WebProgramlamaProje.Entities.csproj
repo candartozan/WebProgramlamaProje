@@ -43,8 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="CargoCompany.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="CartItem.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderStatus.cs" />
     <Compile Include="Region.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="Category.cs" />

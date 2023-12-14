@@ -53,18 +53,23 @@
   <ItemGroup>
     <Compile Include="Abstract\IAddressDal.cs" />
     <Compile Include="Abstract\IBrandDal.cs" />
+    <Compile Include="Abstract\ICargoCompanyDal.cs" />
     <Compile Include="Abstract\ICartDal.cs" />
     <Compile Include="Abstract\ICartItemDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICityDal.cs" />
     <Compile Include="Abstract\IDistrictDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
+    <Compile Include="Abstract\IInvoiceDal.cs" />
+    <Compile Include="Abstract\IOrderDal.cs" />
+    <Compile Include="Abstract\IOrderStatusDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IRegionDal.cs" />
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\AddressDal.cs" />
     <Compile Include="Concrete\BrandDal.cs" />
+    <Compile Include="Concrete\CargoCompanyDal.cs" />
     <Compile Include="Concrete\CartDal.cs" />
     <Compile Include="Concrete\CartItemDal.cs" />
     <Compile Include="Concrete\CategoryDal.cs" />
@@ -73,6 +78,9 @@
     <Compile Include="Concrete\DbInitializer.cs" />
     <Compile Include="Concrete\DistrictDal.cs" />
     <Compile Include="Concrete\GenericDal.cs" />
+    <Compile Include="Concrete\InvoiceDal.cs" />
+    <Compile Include="Concrete\OrderDal.cs" />
+    <Compile Include="Concrete\OrderStatusDal.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\RegionDal.cs" />
     <Compile Include="Concrete\RoleDal.cs" />

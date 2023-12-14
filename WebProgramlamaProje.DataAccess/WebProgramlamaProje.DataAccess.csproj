@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Abstract\IAddressDal.cs" />
     <Compile Include="Abstract\IBrandDal.cs" />
+    <Compile Include="Abstract\ICartDal.cs" />
+    <Compile Include="Abstract\ICartItemDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICityDal.cs" />
     <Compile Include="Abstract\IDistrictDal.cs" />
@@ -63,6 +65,8 @@
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\AddressDal.cs" />
     <Compile Include="Concrete\BrandDal.cs" />
+    <Compile Include="Concrete\CartDal.cs" />
+    <Compile Include="Concrete\CartItemDal.cs" />
     <Compile Include="Concrete\CategoryDal.cs" />
     <Compile Include="Concrete\CityDal.cs" />
     <Compile Include="Concrete\Context.cs" />

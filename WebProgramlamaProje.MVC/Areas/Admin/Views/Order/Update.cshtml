@@ -1,0 +1,31 @@
+﻿@model WebProgramlamaProje.Entities.Order
+
+<div class="text-center my-3">
+    <div class="display-6">Sipariş Durumu Güncelle</div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+
+    <div class="col-md-6">
+
+        @using (Html.BeginForm("Update", "Order", FormMethod.Post))
+        {
+            <div class="form-group my-3">
+                @Html.Label("Durum Seçin")
+                @Html.DropDownListFor(m => m.OrderStatusId, (List<SelectListItem>)TempData["Status"], new { @class = "form-select" })
+            </div>
+
+            <div class="form-group my-3">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Güncelle
+                    </button>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Index","Order")">
+                        <i class="fa fa-list"></i> Siparişler
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

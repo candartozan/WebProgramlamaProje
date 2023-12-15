@@ -16,5 +16,7 @@ namespace WebProgramlamaProje.Business.Abstract
 		void DeleteOrder(int id);
 		List<CargoCompany> GetCargoCompanies();
 		List<OrderStatus> GetOrderStatuses();
+		Order GetOrder(int id);
+		void UpdateOrderStatus(int id, int orderStatusId);
 	}
 }

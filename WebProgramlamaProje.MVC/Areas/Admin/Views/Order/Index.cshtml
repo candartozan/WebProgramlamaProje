@@ -1,0 +1,45 @@
+﻿@model List<WebProgramlamaProje.Entities.Order>
+@{
+    ViewBag.Title = "Siparişler";
+}
+
+<div class="col-12 m-3 text-center">
+    <h3>Siparişler</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kullanıcı Eposta</th>
+                <th>Adres</th>
+                <th>Kargo Şirketi</th>
+                <th>Sipariş Tarihi</th>
+                <th>Sipariş Durumu</th>
+                <th>Durum Güncelle</th>
+                ,
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model)
+            {
+                <tr>
+                    <td>@o.Id</td>
+                    <td>@o.User.Email</td>
+                    <td>@o.Address.Title</td>
+                    <td>@o.CargoCompany.Name</td>
+                    <td>@o.DateOfOrder</td>
+                    <td>@o.OrderStatus.Name</td>
+
+
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-warning" href="@Url.Action("Update", "Order", new {id=o.Id})">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

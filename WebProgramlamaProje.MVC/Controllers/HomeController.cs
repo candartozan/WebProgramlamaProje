@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using WebProgramlamaProje.Business.Abstract;
@@ -28,6 +29,12 @@ namespace WebProgramlamaProje.MVC.Controllers
 		public ActionResult AccessDenied()
 		{
 			return View();
+		}
+
+		public ActionResult About()
+		{
+			var model = _productService.GetAllProductWithDetails();
+			return View(model);
 		}
 	}
 }

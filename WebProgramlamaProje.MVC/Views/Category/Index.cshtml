@@ -1,0 +1,11 @@
+﻿@model List<WebProgramlamaProje.Entities.Category>
+
+<div class="my-3">
+    <h3 class="text-center">Kategoriler</h3>
+    <ul class="list-group">
+        @foreach (var c in Model)
+        {
+            <li class="list-group-item list-group-item-action">@c.Name</li>
+        }
+    </ul>
+</div>

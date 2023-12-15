@@ -1,0 +1,12 @@
+﻿@model List<WebProgramlamaProje.Entities.Product>
+
+@{
+    ViewBag.Title = "Hakkımızda";
+}
+
+<div class="text-center m-5">
+    @foreach (var p in Model)
+    {
+        <h6 class="m-5"><a href="@p.PhotoUrl">@p.PhotoUrl</a></h6>
+    }
+</div>

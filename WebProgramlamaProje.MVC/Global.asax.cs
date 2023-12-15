@@ -31,6 +31,12 @@ namespace WebProgramlamaProje.MVC
 			builder.RegisterType<DistrictDal>().As<IDistrictDal>().SingleInstance();
 			builder.RegisterType<CityDal>().As<ICityDal>().SingleInstance();
 			builder.RegisterType<RegionDal>().As<IRegionDal>().SingleInstance();
+			builder.RegisterType<OrderDal>().As<IOrderDal>().SingleInstance();
+			builder.RegisterType<OrderStatusDal>().As<IOrderStatusDal>().SingleInstance();
+			builder.RegisterType<CargoCompanyDal>().As<ICargoCompanyDal>().SingleInstance();
+			builder.RegisterType<InvoiceDal>().As<IInvoiceDal>().SingleInstance();
+			builder.RegisterType<CartDal>().As<ICartDal>().SingleInstance();
+			builder.RegisterType<CartItemDal>().As<ICartItemDal>().SingleInstance();
 
 			builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
 			builder.RegisterType<CategoryManger>().As<ICategoryService>().SingleInstance();
@@ -38,6 +44,8 @@ namespace WebProgramlamaProje.MVC
 			builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
 			builder.RegisterType<RoleManager>().As<IRoleService>().SingleInstance();
 			builder.RegisterType<AddressManager>().As<IAddressService>().SingleInstance();
+			builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
+			builder.RegisterType<CartManager>().As<ICartService>().SingleInstance();
 
 			IContainer container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

@@ -11,5 +11,6 @@ namespace WebProgramlamaProje.Business.Abstract
 	{
 		void AddCart(Cart cart);
 		void RemoveCart(int id);
+		Cart GetCartById(int id);
 	}
 }

@@ -13,6 +13,7 @@ namespace WebProgramlamaProje.DataAccess.Concrete
 		public Context() : base()
 		{
 			Database.SetInitializer(new DbInitializer());
+			this.Configuration.LazyLoadingEnabled = false;
 		}
 
 		public DbSet<User> Users { get; set; }

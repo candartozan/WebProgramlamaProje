@@ -14,7 +14,11 @@ namespace WebProgramlamaProje.Entities
 		{
 			get
 			{
-				return CartItems.Sum(ci => ci.Product.Price * ci.Quantity);
+				if (CartItems.Count > 0)
+				{
+					return CartItems.Sum(ci => ci.Product.Price * ci.Quantity);
+				}
+				else { return 0; }
 			}
 		}
 		public virtual User User { get; set; }

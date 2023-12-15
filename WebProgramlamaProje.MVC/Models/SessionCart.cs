@@ -46,7 +46,7 @@ namespace WebProgramlamaProje.MVC.Models
 			var context = HttpContext.Current;
 			var cart = (Cart)context.Session["Cart"];
 
-			cart.CartItems.Clear();
+			cart.CartItems = new List<CartItem>();
 			context.Session["Cart"] = cart;
 		}
 

@@ -1,0 +1,43 @@
+﻿@model WebProgramlamaProje.MVC.Models.OrderSelect
+
+@{
+    ViewBag.Title = "Adress ve Kargo Şirketi";
+}
+
+<div class="text-center my-3">
+    <div class="display-6">Adres ve Kargo Şirketi Seçin</div>
+</div>
+
+<div class="d-flex justify-content-center my-5">
+
+    <div class="col-md-6">
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+
+        @using (Html.BeginForm("SelectOrderDetails", "Cart", FormMethod.Post))
+        {
+            <div class="form-group my-3">
+                @Html.Label("Kargo Şirketi")
+                @Html.DropDownListFor(m => m.CargoId, Model.CargoC, new { @class = "form-select" })
+            </div>
+        
+            <div class="form-group my-3">
+                @Html.Label("Adres Şirketi")
+                @Html.DropDownListFor(m => m.AdresId, Model.Addresses, new { @class = "form-select" })
+            </div>
+
+            <div class="form-group my-3">
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Gönder
+                    </button>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Index","Cart")">
+                        <i class="fa fa-list"></i> Sepet
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

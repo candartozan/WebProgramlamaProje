@@ -9,8 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "WebProgramlamaProje.DataAccess.Concrete.Context";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(WebProgramlamaProje.DataAccess.Concrete.Context context)

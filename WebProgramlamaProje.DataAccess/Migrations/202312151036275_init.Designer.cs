@@ -7,13 +7,13 @@ namespace WebProgramlamaProje.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addresss_useraddress_added : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addresss_useraddress_added));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312121530052_addresss_useraddress_added"; }
+            get { return "202312151036275_init"; }
         }
         
         string IMigrationMetadata.Source

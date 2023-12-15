@@ -17,7 +17,8 @@ namespace WebProgramlamaProje.Entities
 		public int OrderStatusId { get; set; }
 		public DateTime DateOfOrder { get; set; }
 		public User User { get; set; }
-		public Address Address { get; set; }
+        public Cart Cart { get; set; }
+        public Address Address { get; set; }
 		public CargoCompany CargoCompany { get; set; }
 		public Invoice Invoice { get; set; }
 		public OrderStatus OrderStatus { get; set; }

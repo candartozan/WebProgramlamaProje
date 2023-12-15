@@ -84,41 +84,9 @@
     <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\RegionDal.cs" />
     <Compile Include="Concrete\RoleDal.cs" />
-    <Compile Include="Migrations\202312082017336_InitialCreate.cs" />
-    <Compile Include="Migrations\202312082017336_InitialCreate.designer.cs">
-      <DependentUpon>202312082017336_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312090941102_brand_and_category.cs" />
-    <Compile Include="Migrations\202312090941102_brand_and_category.designer.cs">
-      <DependentUpon>202312090941102_brand_and_category.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312091030070_category-update.cs" />
-    <Compile Include="Migrations\202312091030070_category-update.designer.cs">
-      <DependentUpon>202312091030070_category-update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312091310453_Product_added.cs" />
-    <Compile Include="Migrations\202312091310453_Product_added.designer.cs">
-      <DependentUpon>202312091310453_Product_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312091448010_Update_brand_category.cs" />
-    <Compile Include="Migrations\202312091448010_Update_brand_category.designer.cs">
-      <DependentUpon>202312091448010_Update_brand_category.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312121457241_district_city_region_added.cs" />
-    <Compile Include="Migrations\202312121457241_district_city_region_added.designer.cs">
-      <DependentUpon>202312121457241_district_city_region_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312121530052_addresss_useraddress_added.cs" />
-    <Compile Include="Migrations\202312121530052_addresss_useraddress_added.designer.cs">
-      <DependentUpon>202312121530052_addresss_useraddress_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312131334075_cart_cartItem_added.cs" />
-    <Compile Include="Migrations\202312131334075_cart_cartItem_added.designer.cs">
-      <DependentUpon>202312131334075_cart_cartItem_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312141123533_order_things_added.cs" />
-    <Compile Include="Migrations\202312141123533_order_things_added.designer.cs">
-      <DependentUpon>202312141123533_order_things_added.cs</DependentUpon>
+    <Compile Include="Migrations\202312151036275_init.cs" />
+    <Compile Include="Migrations\202312151036275_init.designer.cs">
+      <DependentUpon>202312151036275_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,32 +103,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312082017336_InitialCreate.resx">
-      <DependentUpon>202312082017336_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312090941102_brand_and_category.resx">
-      <DependentUpon>202312090941102_brand_and_category.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312091030070_category-update.resx">
-      <DependentUpon>202312091030070_category-update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312091310453_Product_added.resx">
-      <DependentUpon>202312091310453_Product_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312091448010_Update_brand_category.resx">
-      <DependentUpon>202312091448010_Update_brand_category.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312121457241_district_city_region_added.resx">
-      <DependentUpon>202312121457241_district_city_region_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312121530052_addresss_useraddress_added.resx">
-      <DependentUpon>202312121530052_addresss_useraddress_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312131334075_cart_cartItem_added.resx">
-      <DependentUpon>202312131334075_cart_cartItem_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312141123533_order_things_added.resx">
-      <DependentUpon>202312141123533_order_things_added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312151036275_init.resx">
+      <DependentUpon>202312151036275_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

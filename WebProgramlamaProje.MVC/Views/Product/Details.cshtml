@@ -1,0 +1,33 @@
+﻿@model WebProgramlamaProje.Entities.Product
+
+@{
+    ViewBag.Title = "Ürün";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <h6 class="display-6">@Model.Name</h6>
+            <img class="img-fluid shadow rounded-3 p-5 my-3" src="@Model.PhotoUrl" alt="@Model.Name">
+            <p class="lead">@Model.Price.ToString("c")</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <div class="btn-group">
+        <a class="btn btn-outline-secondary" href="@Url.Action("Index","Home")">
+            <i class="fa-solid fa-house"></i>
+            Ana Sayfa
+        </a>
+        <a class="btn btn-outline-secondary rounded-0" href="@Url.Action("AddCart", "Cart", new {id=Model.Id})">
+            <i class="fa fa-cart-plus"></i>
+            Sepete Ekle
+        </a>
+        <a class="btn btn-outline-secondary" href="@Url.Action("Index","Product")">
+            <i class="fa-solid fa-list"></i>
+            Ürünler
+        </a>
+    </div>
+</div>

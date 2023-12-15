@@ -12,6 +12,7 @@ namespace WebProgramlamaProje.Business.Abstract
 		void AddOneProduct(Product entity);
 		List<Product> GetAllProductWithDetails();
 		Product GetProductWithDetailsById(int id);
+		List<Product> GetShowCase();
 		void RemoveOneProduct(int id);
 		void UpdateOneProduct(Product entity);
 	}

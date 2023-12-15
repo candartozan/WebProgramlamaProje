@@ -48,6 +48,18 @@ namespace WebProgramlamaProje.Business.Concrete
 			return product;
 		}
 
+		public List<Product> GetShowCase()
+		{
+			var products = _productDal.FindAll().OrderByDescending(p => p.Id).Take(3);
+			foreach (var p in products)
+			{
+				p.Brand = _brandDal.FindByCondition(b => b.Id == p.BrandId);
+				p.Category = _categoryDal.FindByCondition(c => c.Id == p.CategoryId);
+			}
+
+			return products.ToList();
+		}
+
 		public void RemoveOneProduct(int id)
 		{
 			var product = _productDal.FindByCondition(p => p.Id == id);

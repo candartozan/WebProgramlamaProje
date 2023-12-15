@@ -30,5 +30,12 @@ namespace WebProgramlamaProje.MVC.Controllers
 			model.Categories = _categoryService.GetAllCategories();
 			return View(model);
 		}
+
+		public ActionResult Details(int id)
+		{
+			var product = _productService.GetProductWithDetailsById(id);
+
+			return View(product);
+		}
 	}
 }

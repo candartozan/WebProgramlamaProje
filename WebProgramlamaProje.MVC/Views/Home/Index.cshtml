@@ -1,4 +1,20 @@
-﻿@if (!string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+﻿@model List<WebProgramlamaProje.Entities.Product>
+
+@if (!string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
 {
     <h3 class="text-center">Mağazamıza hoşgeldin @Session["UserName"]</h3>
 }
+
+<div class="display-6 my-3 text-center">En Son Eklene Ürünler</div>
+<div class=" d-flex justify-content-center">
+    <div class="row my-3">
+        <div class="col-md-12">
+            <div class="row">
+                @foreach (var p in Model)
+                {
+                    { Html.RenderPartial("_ProductCardPartial", p); }
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -36,5 +36,10 @@ namespace WebProgramlamaProje.MVC.Controllers
 			var model = _productService.GetAllProductWithDetails();
 			return View(model);
 		}
+
+		public ActionResult Contact()
+		{
+			return View();
+		}
 	}
 }

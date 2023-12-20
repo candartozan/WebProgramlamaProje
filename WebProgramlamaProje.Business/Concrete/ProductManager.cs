@@ -60,6 +60,37 @@ namespace WebProgramlamaProje.Business.Concrete
 			return products.ToList();
 		}
 
+		public List<Product> GetAllProductWithDetails(string searchTerm, int categoryId, int brandId)
+		{
+			IEnumerable<Product> products;
+			if (searchTerm == null)
+			{
+				products = _productDal.FindAll();
+			}
+			else
+			{
+				products = _productDal.FindAll().Where(p => p.Name.ToLower().Contains(searchTerm.ToLower()));
+			}
+
+			if (categoryId > 0)
+			{
+				products = products.Where(p => p.CategoryId.Equals(categoryId));
+			}
+
+			if (brandId > 0)
+			{
+				products = products.Where(p => p.BrandId.Equals(brandId));
+			}
+
+			foreach (var p in products)
+			{
+				p.Brand = _brandDal.FindByCondition(b => b.Id == p.BrandId);
+				p.Category = _categoryDal.FindByCondition(c => c.Id == p.CategoryId);
+			}
+
+			return products.ToList();
+		}
+
 		public Product GetProductWithDetailsById(int id)
 		{
 			var product = _productDal.FindByCondition(p => p.Id == id);

@@ -3,9 +3,14 @@
 <div class="my-3">
     <label>Markalar</label>
     <ul class="list-group">
+        <li class="list-group-item">
+            <a class="text-decoration-none" href="@Url.Action("Index", "Product", new {brandId=0})">Tüm Markalar</a>
+        </li>
         @foreach (var c in Model)
         {
-            <li class="list-group-item">@c.Name</li>
+            <li class="list-group-item">
+                <a class="text-decoration-none" href="@Url.Action("Index", "Product", new {brandId=c.Id})">@c.Name</a>
+            </li>
         }
     </ul>
 

@@ -22,10 +22,10 @@ namespace WebProgramlamaProje.MVC.Controllers
 		}
 
 		// GET: Product
-		public ActionResult Index()
+		public ActionResult Index(string searchTerm)
 		{
 			var model = new ProductMenuViewModel();
-			model.Products = _productService.GetAllProductWithDetails();
+			model.Products = _productService.GetAllProductWithDetails(searchTerm);
 			model.Brands = _brandService.GetAllBrands();
 			model.Categories = _categoryService.GetAllCategories();
 			return View(model);

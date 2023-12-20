@@ -22,10 +22,8 @@
                 }
             }
 
-
-
-            <form class="w-50 me-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <form class="w-50 me-3" role="search" action="@Url.Action("Index","Product")">
+                <input type="search" id="searchTerm" name="searchTerm" class="form-control" placeholder="Ara" aria-label="Search">
             </form>
 
             @if (!string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))

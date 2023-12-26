@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using WebProgramlamaProje.Business.Abstract;
 using WebProgramlamaProje.Entities;
+using WebProgramlamaProje.MVC.Infrastructure;
 using WebProgramlamaProje.MVC.Models;
 
 namespace WebProgramlamaProje.MVC.Controllers
@@ -46,6 +47,7 @@ namespace WebProgramlamaProje.MVC.Controllers
 			return RedirectToAction("Index", "Cart");
 		}
 
+		[CustomAuthenticationFilter]
 		[HttpGet]
 		public ActionResult SelectOrderDetails()
 		{
